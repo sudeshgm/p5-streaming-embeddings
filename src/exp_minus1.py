@@ -84,7 +84,7 @@ res['random_per_timestep_ctrl_a'] = summarize(run_mean(Rf, centre=True)[0])
 res['random_per_timestep_ctrl_b'] = summarize(run_chunks(Rf))
 res['chance_iid_event_embeddings'] = K / (N - 1)
 # confound diagnostics: fraction of top-10 neighbours from same log; cos(4,64) per event
-lg = ev.log_id.values; nb = {L: knn_faiss(E[L]) for L in LENS}
+lg = np.asarray(ev.log_id.astype(str).tolist()); nb = {L: knn_faiss(E[L]) for L in LENS}
 res['same_log_neighbour_frac'] = {L: float(np.mean(lg[nb[L]] == lg[:, None])) for L in LENS}
 res['mean_cos_4_vs_64_same_event'] = float(np.mean(np.sum(l2(E[4]) * l2(E[64]), 1)))
 cl = pd.DataFrame(clip, columns=['event', 'L', 'a', 'b', 'eff_len', 'clipped'])
