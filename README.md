@@ -1,6 +1,6 @@
 # P5 — Streaming and variable-length scenario embeddings
 
-**Status:** blocked on P1 · **Priority:** absorbable into P1 as an ablation · **Budget:** 4–6 weeks
+**Status:** killed/parked at Exp 0 (blocked on P1), see [results/FAILURE_REPORT.md](results/FAILURE_REPORT.md) · **Priority:** absorbable into P1 as an ablation · **Budget:** 4–6 weeks
 
 ---
 
